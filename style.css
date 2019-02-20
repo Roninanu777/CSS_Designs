@@ -1,0 +1,23 @@
+.shadow{
+    background-image: attr(src url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    left: 35%;
+    top: 0;
+    height: 360px;
+    width: 300px;
+}
+
+.shadow:before{
+    background-image: inherit;
+    background-size: inherit;
+    bottom: -350px;
+    content: '';
+    filter: blur(3px);
+    height: 100%;
+    opacity: .3;
+    position: absolute;
+    transform: scaleY(-1);
+    width: 100%;
+}
