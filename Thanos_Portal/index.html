@@ -26,7 +26,7 @@
             portalLight = new THREE.PointLight(0x062d89, 30, 600, 1.7);
             portalLight.position.set(0,0,250);
             scene.add(portalLight);
-            cam = new THREE.PerspectiveCamera(80,window.innerWidth/window.innerHeight,1,10000);
+            cam = new THREE.PerspectiveCamera(100,window.innerWidth/window.innerHeight,1,10000);
             cam.position.z = 1000;
             scene.add(cam);
             renderer = new THREE.WebGLRenderer();
@@ -37,7 +37,7 @@
         }
         function particleSetup() {
             let loader = new THREE.TextureLoader();
-            loader.load("smoke_PNG55219.png", function (texture){
+            loader.load("smoke.png", function (texture){
                 portalGeo = new THREE.PlaneBufferGeometry(350,350);
                 portalMaterial = new THREE.MeshStandardMaterial({
                     map:texture,
@@ -67,7 +67,7 @@
                         25
                     );
                     particle.rotation.z = Math.random() *360;
-                    particle.material.opacity = 0.6;
+                    particle.material.opacity = 0.9;
                     portalParticles.push(particle);
                     scene.add(particle);
                 }
